@@ -4,88 +4,96 @@
   <meta charset="UTF-8">
   <title>Rapport de Projet — DriveEasy</title>
   <style>
-    @page {
-      size: A4;
-      margin: 16mm 15mm;
-    }
+    @page { size: A4; margin: 18mm 16mm; }
     * { box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
-      color: #1e293b;
-      line-height: 1.5;
+      color: #1f2937;
+      background: #ffffff;
+      line-height: 1.55;
       font-size: 10pt;
       margin: 0;
     }
+
+    /* Page de garde simple et épurée */
     .cover {
-      min-height: 250mm;
+      min-height: 248mm;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       text-align: center;
-      padding: 18px 10px;
+      padding: 20px 10px;
       page-break-after: always;
     }
-    .cover-top { font-size: 11pt; color: #475569; }
+    .cover-top { font-size: 10.5pt; color: #4b5563; }
     .cover-logo {
-      width: 230px;
-      margin: 20px auto;
-      border: 1px solid #cbd5e1;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+      width: 210px;
+      margin: 22px auto;
+      border: 1px solid #e5e7eb;
     }
     .cover h1 {
-      font-size: 25pt;
-      color: #0f172a;
+      font-size: 24pt;
+      color: #111827;
       margin: 8px 0 4px;
+      font-weight: 700;
     }
     .cover .subtitle {
-      font-size: 13pt;
+      font-size: 12.5pt;
       color: #ea580c;
-      font-weight: 700;
-      margin-bottom: 18px;
+      font-weight: 600;
+      margin-bottom: 22px;
     }
     .cover-box {
-      border: 1px solid #cbd5e1;
-      padding: 14px 22px;
-      background: #f8fafc;
+      border: 1px solid #d1d5db;
+      padding: 14px 20px;
+      background: #f9fafb;
       text-align: left;
-      max-width: 490px;
+      max-width: 460px;
       margin: 0 auto;
     }
     .cover-box p { margin: 5px 0; text-align: left; }
-    .cover-footer { font-size: 9.5pt; color: #64748b; }
+    .cover-footer { font-size: 9.5pt; color: #6b7280; }
 
-    .toc-page {
-      page-break-after: always;
-    }
-    .toc-box {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      padding: 12px 18px;
-      margin-bottom: 14px;
-    }
-    .toc-box h3 { margin-top: 0; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; }
-    .toc-box ul { list-style: none; padding-left: 0; margin: 6px 0; }
-    .toc-box li { padding: 3px 0; border-bottom: 1px dotted #cbd5e1; font-size: 9.5pt; }
-
-    h2 {
-      color: #0f172a;
-      border-bottom: 2px solid #f97316;
+    /* Sommaire */
+    .toc-page { page-break-after: always; }
+    .toc-block { margin-bottom: 18px; }
+    .toc-block h3 {
+      margin: 0 0 8px;
+      font-size: 11.5pt;
+      color: #111827;
+      border-bottom: 1px solid #d1d5db;
       padding-bottom: 4px;
-      margin-top: 20px;
-      font-size: 13.5pt;
+    }
+    .toc-block ul { list-style: none; padding: 0; margin: 0; }
+    .toc-block li {
+      padding: 4px 0;
+      border-bottom: 1px dotted #e5e7eb;
+      font-size: 9.5pt;
+      color: #374151;
+    }
+
+    /* Titres et texte */
+    h2 {
+      color: #111827;
+      border-bottom: 1.5px solid #f97316;
+      padding-bottom: 4px;
+      margin-top: 22px;
+      margin-bottom: 10px;
+      font-size: 13pt;
       page-break-after: avoid;
     }
     h3 {
-      color: #1e293b;
-      margin-top: 12px;
-      margin-bottom: 5px;
-      font-size: 11pt;
+      color: #1f2937;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      font-size: 10.5pt;
       page-break-after: avoid;
     }
     p { margin: 5px 0 9px; text-align: justify; }
     ul { margin: 4px 0 10px 18px; }
     li { margin-bottom: 3px; }
 
+    /* Tableaux minimalistes */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -94,70 +102,61 @@
       page-break-inside: avoid;
     }
     th, td {
-      border: 1px solid #cbd5e1;
+      border: 1px solid #d1d5db;
       padding: 6px 8px;
       text-align: left;
       vertical-align: top;
     }
     th {
-      background: #0f172a;
-      color: #ffffff;
+      background: #f3f4f6;
+      color: #111827;
       font-weight: 600;
     }
-    tr:nth-child(even) td { background: #f8fafc; }
 
-    .figure {
+    /* Code simple sur fond clair */
+    code {
+      background: #f3f4f6;
+      padding: 1px 4px;
+      font-family: Consolas, monospace;
+      font-size: 8.8pt;
+      color: #111827;
+    }
+    pre {
+      background: #f9fafb;
+      color: #1f2937;
+      border: 1px solid #e5e7eb;
+      border-left: 3px solid #f97316;
+      padding: 8px 12px;
+      font-family: Consolas, monospace;
+      font-size: 8.2pt;
+      line-height: 1.45;
+      margin: 6px 0 12px;
+      overflow-x: auto;
+      page-break-inside: avoid;
+    }
+
+    /* Figures & schémas */
+    .figure, .svg-box {
       margin: 10px 0 16px;
       text-align: center;
       page-break-inside: avoid;
     }
+    .svg-box {
+      border: 1px solid #e5e7eb;
+      padding: 10px;
+      background: #ffffff;
+    }
     .figure img {
       max-width: 100%;
-      max-height: 105mm;
-      border: 1px solid #cbd5e1;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-    .svg-box {
-      border: 1px solid #cbd5e1;
-      background: #ffffff;
-      padding: 10px;
-      margin: 8px auto;
-      text-align: center;
-      page-break-inside: avoid;
+      max-height: 102mm;
+      border: 1px solid #d1d5db;
     }
     .caption {
       font-size: 8.8pt;
-      color: #475569;
+      color: #6b7280;
       font-style: italic;
       margin-top: 4px;
-    }
-    code {
-      background: #f1f5f9;
-      padding: 1px 4px;
-      font-family: Consolas, monospace;
-      font-size: 9pt;
-    }
-    pre {
-      background: #0f172a;
-      color: #e2e8f0;
-      padding: 9px 12px;
-      font-family: Consolas, monospace;
-      font-size: 8.2pt;
-      line-height: 1.4;
-      overflow-x: auto;
-      margin: 6px 0 12px;
-      border-left: 3px solid #f97316;
-      page-break-inside: avoid;
-    }
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .card-note {
-      border: 1px solid #e2e8f0;
-      background: #f8fafc;
-      padding: 10px 12px;
+      text-align: center;
     }
   </style>
 </head>
@@ -178,55 +177,55 @@
       <div class="cover-box">
         <p><strong>Réalisé par :</strong> Azouz Wadhah</p>
         <p><strong>Enseignant :</strong> Karim Ben Romdhane</p>
-        <p><strong>Technologies :</strong> Java 21, Spring Boot 3.4.5, Spring Cloud 2024.0.1, Eureka, Config Server, API Gateway, Zipkin (Docker), Angular 22</p>
+        <p><strong>Technologies :</strong> Java 21, Spring Boot 3.4.5, Spring Cloud, Eureka, Config Server, API Gateway, Zipkin (Docker), Angular 22</p>
         <p><strong>Année universitaire :</strong> 2025 – 2026</p>
       </div>
     </div>
 
     <div class="cover-footer">
-      Projet individuel — Architecture Microservices &amp; Frontend Angular 22 (Bonus)
+      Projet individuel — Architecture Microservices &amp; Frontend Angular 22
     </div>
   </div>
 
-  <!-- SOMMAIRE, TABLES DES FIGURES ET DES TABLEAUX -->
+  <!-- SOMMAIRE, FIGURES, TABLEAUX -->
   <div class="toc-page">
-    <div class="toc-box">
+    <div class="toc-block">
       <h3>Table des matières</h3>
       <ul>
         <li>1. Introduction et contexte</li>
-        <li>2. Analyse et conception (Acteurs, Cas d'utilisation, Diagrammes de classes, Choix techniques)</li>
-        <li>3. Architecture globale (Schéma, Composants, Flux inter-services)</li>
-        <li>4. Réalisation Backend (Spring Boot / Spring Cloud, Extraits de code, Eureka &amp; Zipkin)</li>
-        <li>5. Réalisation Frontend (Angular 22 — Structure, Services, Routage, Guard, Intercepteur, Captures)</li>
+        <li>2. Analyse et conception</li>
+        <li>3. Architecture globale</li>
+        <li>4. Réalisation Backend (Spring Boot / Spring Cloud)</li>
+        <li>5. Réalisation Frontend (Angular 22 — Bonus)</li>
         <li>6. Conclusion et perspectives</li>
-        <li>7. Annexes (Dépôts GitHub, Webographie)</li>
+        <li>7. Annexes</li>
       </ul>
     </div>
 
-    <div class="toc-box">
+    <div class="toc-block">
       <h3>Table des figures</h3>
       <ul>
         <li>Figure 1 — Diagramme de cas d'utilisation (Agent d'agence)</li>
-        <li>Figure 2 — Diagrammes de classes des 3 microservices (Vehicule, Client, Location)</li>
+        <li>Figure 2 — Diagrammes de classes des 3 microservices</li>
         <li>Figure 3 — Schéma d'architecture globale DriveEasy</li>
-        <li>Figure 4 — Tableau de bord Eureka (instances enregistrées UP)</li>
-        <li>Figure 5 — Trace distribuée Zipkin et analyse des temps de réponse</li>
-        <li>Figure 6 — Frontend : Tableau de bord (/dashboard)</li>
-        <li>Figure 7 — Frontend : Catalogue des véhicules (/vehicules)</li>
-        <li>Figure 8 — Frontend : Liste des clients (/clients)</li>
-        <li>Figure 9 — Frontend : Liste des locations (/locations)</li>
-        <li>Figure 10 — Frontend : Assistant Nouvelle location (/locations/new)</li>
-        <li>Figure 11 — Frontend : Retour de véhicule (/locations/:id/retour)</li>
+        <li>Figure 4 — Tableau de bord Eureka (services UP)</li>
+        <li>Figure 5 — Traçage distribué Zipkin</li>
+        <li>Figure 6 — Tableau de bord (/dashboard)</li>
+        <li>Figure 7 — Catalogue des véhicules (/vehicules)</li>
+        <li>Figure 8 — Liste des clients (/clients)</li>
+        <li>Figure 9 — Liste des locations (/locations)</li>
+        <li>Figure 10 — Assistant Nouvelle location (/locations/new)</li>
+        <li>Figure 11 — Retour de véhicule (/locations/:id/retour)</li>
       </ul>
     </div>
 
-    <div class="toc-box">
+    <div class="toc-block">
       <h3>Table des tableaux</h3>
       <ul>
         <li>Tableau 1 — Choix techniques et justifications</li>
-        <li>Tableau 2 — Composants de l'architecture, ports et rôles</li>
-        <li>Tableau 3 — Endpoints REST exposés par les 3 microservices</li>
-        <li>Tableau 4 — Routes, guard et composants de l'application Angular 22</li>
+        <li>Tableau 2 — Composants, ports et rôles</li>
+        <li>Tableau 3 — Endpoints REST exposés</li>
+        <li>Tableau 4 — Routes et composants Angular 22</li>
       </ul>
     </div>
   </div>
@@ -234,362 +233,290 @@
   <!-- 1. INTRODUCTION -->
   <h2>1. Introduction et contexte</h2>
   <p>
-    La société <strong>DriveEasy</strong>, spécialisée dans la location de voitures de courte et moyenne durée, souhaite remplacer son application monolithique vieillissante par une plateforme moderne, modulaire, scalable et maintenable.
+    La société <strong>DriveEasy</strong> souhaite remplacer son application monolithique de location de voitures par une plateforme moderne basée sur une <strong>architecture microservices</strong> (Spring Boot / Spring Cloud) accompagnée d'une interface web <strong>Angular 22</strong> pour les agents d'agence.
   </p>
   <p>
-    <strong>Problématique :</strong> Comment découper la gestion du parc automobile, des clients et du cycle de vie des locations en services indépendants tout en garantissant un point d'entrée unique, une configuration centralisée, la tolérance aux pannes et l'observabilité des appels distribués ?
+    <strong>Problématique :</strong> Comment découper la gestion des véhicules, des clients et des locations en services indépendants tout en conservant un point d'entrée unique, une configuration centralisée et un suivi complet des appels inter-services ?
   </p>
-  <div class="two-col">
-    <div class="card-note">
-      <strong>Périmètre &amp; objectifs métier</strong>
-      <ul>
-        <li>Gérer le parc automobile (catégories, statut, kilométrage, tarifs).</li>
-        <li>Gérer les clients, l'éligibilité (âge ≥ 21 ans, permis valide) et la fidélité (STANDARD, FIDELE, VIP).</li>
-        <li>Piloter les locations : simulation, réservation, départ, retour avec pénalités, annulation.</li>
-        <li>Fournir des indicateurs (taux d'occupation, chiffre d'affaires, top véhicules).</li>
-      </ul>
-    </div>
-    <div class="card-note">
-      <strong>Objectifs pédagogiques</strong>
-      <ul>
-        <li>Mettre en œuvre Spring Cloud (Eureka, Config Server, API Gateway).</li>
-        <li>Orchestrer la communication synchrone via <code>RestClient</code> + compensation.</li>
-        <li>Assurer le traçage distribué avec Zipkin sous Docker.</li>
-        <li>Réaliser une interface Angular 22 consommant uniquement la Gateway.</li>
-      </ul>
-    </div>
-  </div>
+  <ul>
+    <li><strong>Périmètre métier :</strong> gestion du parc automobile, gestion des clients et éligibilité (âge ≥ 21 ans, permis valide), cycle complet des locations (simulation, réservation, départ, retour avec pénalités, annulation) et statistiques.</li>
+    <li><strong>Périmètre technique :</strong> découverte via Eureka, configuration via Config Server, routage via API Gateway, traçage via Zipkin (Docker) et stockage en mémoire vive (RAM).</li>
+  </ul>
 
   <!-- 2. ANALYSE ET CONCEPTION -->
   <h2>2. Analyse et conception</h2>
 
-  <h3>2.1 Acteurs, besoins fonctionnels et non fonctionnels</h3>
+  <h3>2.1 Acteurs et besoins</h3>
   <p>
-    <strong>Acteur principal :</strong> <strong>L'agent d'agence</strong>. Il utilise le portail Angular 22 pour gérer le parc, enregistrer les clients, vérifier leur éligibilité et exécuter tout le cycle de location.
+    L'acteur principal est <strong>l'agent d'agence</strong>. Il utilise l'application Angular 22 pour gérer le catalogue de véhicules, vérifier l'éligibilité des clients et piloter les locations.
   </p>
   <ul>
-    <li><strong>Besoins fonctionnels :</strong> CRUD véhicules avec filtres et disponibilité ; CRUD clients avec unicité (CIN, email, permis) et contrôle d'éligibilité ; simulation de tarif avec remises fidélité (5 % FIDELE, 10 % VIP) ; cycle de location (<code>RESERVEE → EN_COURS → TERMINEE / ANNULEE</code>) avec calcul automatique des pénalités de retard (<code>1,5 × prixJournalier / jour</code>) et statistiques temps réel.</li>
-    <li><strong>Besoins non fonctionnels :</strong> Découplage strict des données (stockage en mémoire vive <code>ConcurrentHashMap</code> par microservice, aucune base de données externe) ; point d'entrée unique via l'API Gateway ; traçage distribué à 100 % sur Zipkin ; gestion centralisée des erreurs HTTP (400, 404, 409, 500).</li>
+    <li><strong>Besoins fonctionnels :</strong> CRUD véhicules avec filtres ; CRUD clients avec unicité (CIN, email, permis) et fidélité (FIDELE à 5 locations, VIP à 15) ; simulation tarifaire (remise 5 % FIDELE, 10 % VIP) ; départ, retour avec pénalité de retard (<code>1,5 × tarif/jour</code>) et annulation.</li>
+    <li><strong>Besoins non fonctionnels :</strong> isolation des données en RAM (<code>ConcurrentHashMap</code>, aucune base externe), point d'entrée unique via l'API Gateway, gestion centralisée des erreurs HTTP (400, 404, 409, 500) et traçage distribué à 100 %.</li>
   </ul>
 
   <h3>2.2 Diagramme de cas d'utilisation</h3>
   <div class="svg-box">
-    <svg width="650" height="230" viewBox="0 0 650 230" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
-      <rect x="155" y="8" width="480" height="214" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
-      <text x="395" y="26" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f172a">Système DriveEasy (API Gateway + Angular 22)</text>
+    <svg width="620" height="205" viewBox="0 0 620 205" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+      <rect x="150" y="6" width="460" height="192" fill="#fafafa" stroke="#374151" stroke-width="1.2"/>
+      <text x="380" y="23" text-anchor="middle" font-size="11" font-weight="bold" fill="#111827">Système DriveEasy</text>
 
-      <!-- Actor -->
-      <circle cx="55" cy="88" r="14" fill="none" stroke="#ea580c" stroke-width="2"/>
-      <line x1="55" y1="102" x2="55" y2="142" stroke="#ea580c" stroke-width="2"/>
-      <line x1="30" y1="115" x2="80" y2="115" stroke="#ea580c" stroke-width="2"/>
-      <line x1="55" y1="142" x2="35" y2="170" stroke="#ea580c" stroke-width="2"/>
-      <line x1="55" y1="142" x2="75" y2="170" stroke="#ea580c" stroke-width="2"/>
-      <text x="55" y="190" text-anchor="middle" font-size="11" font-weight="bold" fill="#0f172a">Agent d'agence</text>
+      <!-- Acteur -->
+      <circle cx="55" cy="75" r="12" fill="none" stroke="#ea580c" stroke-width="1.8"/>
+      <line x1="55" y1="87" x2="55" y2="122" stroke="#ea580c" stroke-width="1.8"/>
+      <line x1="34" y1="99" x2="76" y2="99" stroke="#ea580c" stroke-width="1.8"/>
+      <line x1="55" y1="122" x2="38" y2="148" stroke="#ea580c" stroke-width="1.8"/>
+      <line x1="55" y1="122" x2="72" y2="148" stroke="#ea580c" stroke-width="1.8"/>
+      <text x="55" y="166" text-anchor="middle" font-size="10" font-weight="bold" fill="#111827">Agent d'agence</text>
 
-      <!-- Use cases -->
-      <ellipse cx="310" cy="60" rx="115" ry="18" fill="#fff" stroke="#334155"/>
-      <text x="310" y="64" text-anchor="middle" font-size="10">Gérer le parc véhicules (CRUD, filtres)</text>
+      <!-- Cas -->
+      <ellipse cx="295" cy="52" rx="108" ry="16" fill="#fff" stroke="#4b5563"/>
+      <text x="295" y="56" text-anchor="middle" font-size="9.5">Gérer les véhicules (CRUD, filtres)</text>
 
-      <ellipse cx="310" cy="105" rx="115" ry="18" fill="#fff" stroke="#334155"/>
-      <text x="310" y="109" text-anchor="middle" font-size="10">Gérer les clients &amp; éligibilité</text>
+      <ellipse cx="295" cy="92" rx="108" ry="16" fill="#fff" stroke="#4b5563"/>
+      <text x="295" y="96" text-anchor="middle" font-size="9.5">Gérer les clients &amp; éligibilité</text>
 
-      <ellipse cx="310" cy="150" rx="115" ry="18" fill="#fff" stroke="#334155"/>
-      <text x="310" y="154" text-anchor="middle" font-size="10">Simuler, réserver, démarrer, retourner</text>
+      <ellipse cx="295" cy="132" rx="108" ry="16" fill="#fff" stroke="#4b5563"/>
+      <text x="295" y="136" text-anchor="middle" font-size="9.5">Piloter les locations (cycle complet)</text>
 
-      <ellipse cx="310" cy="195" rx="115" ry="18" fill="#fff" stroke="#334155"/>
-      <text x="310" y="199" text-anchor="middle" font-size="10">Consulter statistiques &amp; tableau de bord</text>
+      <ellipse cx="295" cy="172" rx="108" ry="16" fill="#fff" stroke="#4b5563"/>
+      <text x="295" y="176" text-anchor="middle" font-size="9.5">Consulter le tableau de bord</text>
 
-      <!-- Include / Extend -->
-      <ellipse cx="545" cy="128" rx="75" ry="17" fill="#fff7ed" stroke="#f97316"/>
-      <text x="545" y="132" text-anchor="middle" font-size="9.5" fill="#9a3412">Calculer tarif &amp; pénalités</text>
-      <ellipse cx="545" cy="175" rx="75" ry="17" fill="#fff7ed" stroke="#f97316"/>
-      <text x="545" y="179" text-anchor="middle" font-size="9.5" fill="#9a3412">MAJ fidélité &amp; statut auto</text>
+      <ellipse cx="520" cy="114" rx="72" ry="15" fill="#fff7ed" stroke="#f97316"/>
+      <text x="520" y="118" text-anchor="middle" font-size="9" fill="#9a3412">Calculer prix &amp; pénalités</text>
 
-      <!-- Lines -->
-      <line x1="82" y1="112" x2="195" y2="60" stroke="#64748b"/>
-      <line x1="82" y1="115" x2="195" y2="105" stroke="#64748b"/>
-      <line x1="82" y1="120" x2="195" y2="150" stroke="#64748b"/>
-      <line x1="82" y1="125" x2="195" y2="195" stroke="#64748b"/>
-      <line x1="425" y1="145" x2="470" y2="128" stroke="#f97316" stroke-dasharray="4,3"/>
-      <line x1="425" y1="155" x2="470" y2="175" stroke="#f97316" stroke-dasharray="4,3"/>
+      <ellipse cx="520" cy="156" rx="72" ry="15" fill="#fff7ed" stroke="#f97316"/>
+      <text x="520" y="160" text-anchor="middle" font-size="9" fill="#9a3412">MAJ statut &amp; fidélité</text>
+
+      <line x1="80" y1="98" x2="187" y2="52" stroke="#6b7280"/>
+      <line x1="80" y1="100" x2="187" y2="92" stroke="#6b7280"/>
+      <line x1="80" y1="104" x2="187" y2="132" stroke="#6b7280"/>
+      <line x1="80" y1="108" x2="187" y2="172" stroke="#6b7280"/>
+      <line x1="403" y1="128" x2="448" y2="114" stroke="#f97316" stroke-dasharray="3,3"/>
+      <line x1="403" y1="138" x2="448" y2="156" stroke="#f97316" stroke-dasharray="3,3"/>
     </svg>
-    <div class="caption">Figure 1 : Diagramme de cas d'utilisation — Interactions de l'agent d'agence avec DriveEasy.</div>
+    <div class="caption">Figure 1 : Diagramme de cas d'utilisation de la plateforme DriveEasy.</div>
   </div>
 
   <h3>2.3 Diagrammes de classes par microservice</h3>
   <div class="svg-box">
-    <svg width="660" height="255" viewBox="0 0 660 255" xmlns="http://www.w3.org/2000/svg" font-family="Consolas, monospace">
-      <!-- Vehicule -->
-      <rect x="10" y="10" width="200" height="235" fill="#f8fafc" stroke="#0f172a" stroke-width="1.3"/>
-      <rect x="10" y="10" width="200" height="26" fill="#0f172a"/>
-      <text x="110" y="27" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#fff">vehicule-service :: Vehicule</text>
-      <text x="18" y="52" font-size="9">- id : Long</text>
-      <text x="18" y="66" font-size="9">- immatriculation : String (unique)</text>
-      <text x="18" y="80" font-size="9">- marque, modele, couleur : String</text>
-      <text x="18" y="94" font-size="9">- categorie : CategorieVehicule</text>
-      <text x="18" y="108" font-size="9">- annee, nbPlaces, kilometrage : int</text>
-      <text x="18" y="122" font-size="9">- carburant : Carburant</text>
-      <text x="18" y="136" font-size="9">- boite : Boite</text>
-      <text x="18" y="150" font-size="9">- prixJournalier : BigDecimal</text>
-      <text x="18" y="164" font-size="9">- statut : StatutVehicule</text>
-      <text x="18" y="178" font-size="9">- imageUrl : String</text>
-      <line x1="10" y1="188" x2="210" y2="188" stroke="#cbd5e1"/>
-      <text x="18" y="204" font-size="8.5" fill="#475569">Enums: DISPONIBLE, LOUE,</text>
-      <text x="18" y="217" font-size="8.5" fill="#475569">MAINTENANCE | ESSENCE, DIESEL,</text>
-      <text x="18" y="230" font-size="8.5" fill="#475569">HYBRIDE, ELECTRIQUE</text>
+    <svg width="640" height="225" viewBox="0 0 640 225" xmlns="http://www.w3.org/2000/svg" font-family="Consolas, monospace">
+      <rect x="8" y="8" width="198" height="208" fill="#fafafa" stroke="#374151"/>
+      <rect x="8" y="8" width="198" height="24" fill="#1f2937"/>
+      <text x="107" y="24" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">Vehicule</text>
+      <text x="15" y="46" font-size="8.8">- id : Long</text>
+      <text x="15" y="60" font-size="8.8">- immatriculation : String</text>
+      <text x="15" y="74" font-size="8.8">- marque, modele : String</text>
+      <text x="15" y="88" font-size="8.8">- categorie : CategorieVehicule</text>
+      <text x="15" y="102" font-size="8.8">- annee, nbPlaces, km : int</text>
+      <text x="15" y="116" font-size="8.8">- carburant : Carburant</text>
+      <text x="15" y="130" font-size="8.8">- boite : Boite</text>
+      <text x="15" y="144" font-size="8.8">- prixJournalier : BigDecimal</text>
+      <text x="15" y="158" font-size="8.8">- statut : StatutVehicule</text>
+      <line x1="8" y1="170" x2="206" y2="170" stroke="#d1d5db"/>
+      <text x="15" y="186" font-size="8.3" fill="#4b5563">DISPONIBLE | LOUE | MAINTENANCE</text>
+      <text x="15" y="200" font-size="8.3" fill="#4b5563">ESSENCE | DIESEL | HYB | ELEC</text>
 
-      <!-- Client -->
-      <rect x="230" y="10" width="200" height="235" fill="#f8fafc" stroke="#0f172a" stroke-width="1.3"/>
-      <rect x="230" y="10" width="200" height="26" fill="#0f172a"/>
-      <text x="330" y="27" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#fff">client-service :: Client</text>
-      <text x="238" y="52" font-size="9">- id : Long</text>
-      <text x="238" y="66" font-size="9">- cin : String (unique)</text>
-      <text x="238" y="80" font-size="9">- nom, prenom : String</text>
-      <text x="238" y="94" font-size="9">- dateNaissance : LocalDate</text>
-      <text x="238" y="108" font-size="9">- email : String (unique)</text>
-      <text x="238" y="122" font-size="9">- telephone, adresse : String</text>
-      <text x="238" y="136" font-size="9">- numeroPermis : String (unique)</text>
-      <text x="238" y="150" font-size="9">- dateExpirationPermis : LocalDate</text>
-      <text x="238" y="164" font-size="9">- categorieClient : CategorieClient</text>
-      <text x="238" y="178" font-size="9">- dateInscription : LocalDate</text>
-      <line x1="230" y1="188" x2="430" y2="188" stroke="#cbd5e1"/>
-      <text x="238" y="204" font-size="8.5" fill="#475569">Enum CategorieClient:</text>
-      <text x="238" y="217" font-size="8.5" fill="#475569">STANDARD, FIDELE (≥5 loc.),</text>
-      <text x="238" y="230" font-size="8.5" fill="#475569">VIP (≥15 loc.)</text>
+      <rect x="221" y="8" width="198" height="208" fill="#fafafa" stroke="#374151"/>
+      <rect x="221" y="8" width="198" height="24" fill="#1f2937"/>
+      <text x="320" y="24" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">Client</text>
+      <text x="228" y="46" font-size="8.8">- id : Long</text>
+      <text x="228" y="60" font-size="8.8">- cin, email : String (unique)</text>
+      <text x="228" y="74" font-size="8.8">- nom, prenom : String</text>
+      <text x="228" y="88" font-size="8.8">- dateNaissance : LocalDate</text>
+      <text x="228" y="102" font-size="8.8">- telephone, adresse : String</text>
+      <text x="228" y="116" font-size="8.8">- numeroPermis : String (unique)</text>
+      <text x="228" y="130" font-size="8.8">- dateExpirationPermis : Date</text>
+      <text x="228" y="144" font-size="8.8">- categorieClient : Categorie</text>
+      <text x="228" y="158" font-size="8.8">- dateInscription : LocalDate</text>
+      <line x1="221" y1="170" x2="419" y2="170" stroke="#d1d5db"/>
+      <text x="228" y="186" font-size="8.3" fill="#4b5563">STANDARD | FIDELE | VIP</text>
+      <text x="228" y="200" font-size="8.3" fill="#4b5563">Éligible si âge ≥ 21 &amp; permis OK</text>
 
-      <!-- Location -->
-      <rect x="450" y="10" width="200" height="235" fill="#f8fafc" stroke="#ea580c" stroke-width="1.5"/>
-      <rect x="450" y="10" width="200" height="26" fill="#ea580c"/>
-      <text x="550" y="27" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#fff">location-service :: Location</text>
-      <text x="458" y="52" font-size="9">- id : Long</text>
-      <text x="458" y="66" font-size="9">- clientId, vehiculeId : Long</text>
-      <text x="458" y="80" font-size="9">- dateDebut, dateFinPrevue : LocalDate</text>
-      <text x="458" y="94" font-size="9">- dateRetourEffectif : LocalDate</text>
-      <text x="458" y="108" font-size="9">- kmDepart, kmRetour : Integer</text>
-      <text x="458" y="122" font-size="9">- prixJournalierApplique : BigDecimal</text>
-      <text x="458" y="136" font-size="9">- montantTotal : BigDecimal</text>
-      <text x="458" y="150" font-size="9">- penalite : BigDecimal</text>
-      <text x="458" y="164" font-size="9">- statut : StatutLocation</text>
-      <text x="458" y="178" font-size="9">- dateCreation : LocalDateTime</text>
-      <line x1="450" y1="188" x2="650" y2="188" stroke="#cbd5e1"/>
-      <text x="458" y="204" font-size="8.5" fill="#475569">Enum StatutLocation:</text>
-      <text x="458" y="217" font-size="8.5" fill="#475569">RESERVEE, EN_COURS,</text>
-      <text x="458" y="230" font-size="8.5" fill="#475569">TERMINEE, ANNULEE</text>
+      <rect x="434" y="8" width="198" height="208" fill="#fafafa" stroke="#ea580c"/>
+      <rect x="434" y="8" width="198" height="24" fill="#ea580c"/>
+      <text x="533" y="24" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">Location</text>
+      <text x="441" y="46" font-size="8.8">- id : Long</text>
+      <text x="441" y="60" font-size="8.8">- clientId, vehiculeId : Long</text>
+      <text x="441" y="74" font-size="8.8">- dateDebut, dateFinPrevue</text>
+      <text x="441" y="88" font-size="8.8">- dateRetourEffectif</text>
+      <text x="441" y="102" font-size="8.8">- kmDepart, kmRetour : Integer</text>
+      <text x="441" y="116" font-size="8.8">- prixJournalierApplique</text>
+      <text x="441" y="130" font-size="8.8">- montantTotal, penalite</text>
+      <text x="441" y="144" font-size="8.8">- statut : StatutLocation</text>
+      <text x="441" y="158" font-size="8.8">- dateCreation : LocalDateTime</text>
+      <line x1="434" y1="170" x2="632" y2="170" stroke="#d1d5db"/>
+      <text x="441" y="186" font-size="8.3" fill="#4b5563">RESERVEE | EN_COURS |</text>
+      <text x="441" y="200" font-size="8.3" fill="#4b5563">TERMINEE | ANNULEE</text>
     </svg>
-    <div class="caption">Figure 2 : Diagrammes de classes des 3 microservices métier (modèles isolés par service).</div>
+    <div class="caption">Figure 2 : Diagrammes de classes des 3 microservices métier.</div>
   </div>
 
   <h3>2.4 Choix techniques</h3>
   <table>
-    <thead>
-      <tr><th>Technologie</th><th>Rôle dans le projet</th><th>Justification</th></tr>
-    </thead>
+    <thead><tr><th>Choix</th><th>Rôle</th><th>Justification</th></tr></thead>
     <tbody>
-      <tr><td>Java 21 &amp; Spring Boot 3.4.5</td><td>Socle des 6 modules backend</td><td>Support LTS, records Java pour les DTOs, validation Jakarta (<code>@Valid</code>) et Actuator intégré.</td></tr>
-      <tr><td>Spring Cloud 2024.0.1</td><td>Eureka, Config, Gateway</td><td>Écosystème natif pour la découverte dynamique, la configuration externalisée et le routage <code>lb://</code>.</td></tr>
-      <tr><td><code>ConcurrentHashMap</code> (RAM)</td><td>Stockage sans base de données</td><td>Respect strict du cahier des charges, accès thread-safe et séparation des données par microservice.</td></tr>
-      <tr><td>Zipkin (Docker)</td><td>Traçage distribué</td><td>Déploiement rapide via <code>docker-compose.yml</code>, visualisation des appels Gateway → Services.</td></tr>
-      <tr><td>Angular 22 (Standalone)</td><td>Frontend agent d'agence</td><td>Architecture légère sans NgModule, signaux réactifs, lazy loading et typage strict TypeScript.</td></tr>
+      <tr><td>Java 21 &amp; Spring Boot 3.4.5</td><td>Socle backend</td><td>Records Java pour les DTOs, validation <code>@Valid</code>, Actuator intégré.</td></tr>
+      <tr><td>Spring Cloud 2024.0.1</td><td>Eureka, Config, Gateway</td><td>Découverte dynamique, configuration centralisée et routage <code>lb://</code>.</td></tr>
+      <tr><td><code>ConcurrentHashMap</code> (RAM)</td><td>Stockage sans BDD</td><td>Conformité au cahier des charges, thread-safe et démarrage instantané.</td></tr>
+      <tr><td>Zipkin (Docker)</td><td>Traçage distribué</td><td>Déploiement en une commande via <code>docker-compose.yml</code>.</td></tr>
+      <tr><td>Angular 22 (Standalone)</td><td>Frontend web</td><td>Composants autonomes, lazy loading, signaux réactifs.</td></tr>
     </tbody>
   </table>
-  <div class="caption" style="text-align:center; margin-top:-8px; margin-bottom:10px;">Tableau 1 : Choix techniques et justifications.</div>
+  <div class="caption" style="margin-top:-8px; margin-bottom:10px;">Tableau 1 : Choix techniques et justifications.</div>
 
   <!-- 3. ARCHITECTURE GLOBALE -->
   <h2>3. Architecture globale</h2>
   <p>
-    Le frontend Angular (<code>:4200</code>) ne communique <strong>jamais directement</strong> avec les microservices : toutes ses requêtes passent par l'<strong>API Gateway</strong> (<code>:8080</code>), qui interroge Eureka (<code>:8761</code>) pour équilibrer la charge vers les services métier.
+    Le frontend Angular (<code>:4200</code>) passe exclusivement par l'<strong>API Gateway</strong> (<code>:8080</code>), qui s'appuie sur <strong>Eureka</strong> (<code>:8761</code>) pour router les requêtes vers les 3 microservices métier.
   </p>
 
   <div class="svg-box">
-    <svg width="650" height="235" viewBox="0 0 650 235" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
-      <!-- Frontend -->
-      <rect x="20" y="75" width="125" height="60" fill="#0f172a" stroke="#f97316" stroke-width="2"/>
-      <text x="82" y="100" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#fff">Angular 22</text>
-      <text x="82" y="117" text-anchor="middle" font-size="9.5" fill="#fdba74">localhost:4200</text>
+    <svg width="620" height="205" viewBox="0 0 620 205" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+      <rect x="15" y="65" width="115" height="52" fill="#f9fafb" stroke="#1f2937" stroke-width="1.5"/>
+      <text x="72" y="88" text-anchor="middle" font-size="10" font-weight="bold">Angular 22</text>
+      <text x="72" y="103" text-anchor="middle" font-size="9" fill="#4b5563">:4200</text>
 
-      <!-- Gateway -->
-      <rect x="190" y="75" width="135" height="60" fill="#ea580c"/>
-      <text x="257" y="100" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#fff">API Gateway</text>
-      <text x="257" y="117" text-anchor="middle" font-size="9.5" fill="#ffedd5">:8080 (CORS, lb://)</text>
+      <rect x="175" y="65" width="125" height="52" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
+      <text x="237" y="88" text-anchor="middle" font-size="10" font-weight="bold" fill="#9a3412">API Gateway</text>
+      <text x="237" y="103" text-anchor="middle" font-size="9" fill="#9a3412">:8080 (CORS, lb://)</text>
 
-      <!-- Microservices -->
-      <rect x="385" y="18" width="150" height="44" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
-      <text x="460" y="37" text-anchor="middle" font-size="10" font-weight="bold">vehicule-service</text>
-      <text x="460" y="52" text-anchor="middle" font-size="9" fill="#475569">:8081 (RAM)</text>
+      <rect x="360" y="14" width="140" height="40" fill="#fff" stroke="#374151"/>
+      <text x="430" y="32" text-anchor="middle" font-size="9.5" font-weight="bold">vehicule-service</text>
+      <text x="430" y="45" text-anchor="middle" font-size="8.5" fill="#4b5563">:8081</text>
 
-      <rect x="385" y="83" width="150" height="44" fill="#f8fafc" stroke="#0f172a" stroke-width="1.5"/>
-      <text x="460" y="102" text-anchor="middle" font-size="10" font-weight="bold">client-service</text>
-      <text x="460" y="117" text-anchor="middle" font-size="9" fill="#475569">:8082 (RAM)</text>
+      <rect x="360" y="71" width="140" height="40" fill="#fff" stroke="#374151"/>
+      <text x="430" y="89" text-anchor="middle" font-size="9.5" font-weight="bold">client-service</text>
+      <text x="430" y="102" text-anchor="middle" font-size="8.5" fill="#4b5563">:8082</text>
 
-      <rect x="385" y="148" width="150" height="44" fill="#fff7ed" stroke="#ea580c" stroke-width="1.5"/>
-      <text x="460" y="167" text-anchor="middle" font-size="10" font-weight="bold">location-service</text>
-      <text x="460" y="182" text-anchor="middle" font-size="9" fill="#9a3412">:8083 (Orchestrateur)</text>
+      <rect x="360" y="128" width="140" height="40" fill="#fff7ed" stroke="#ea580c"/>
+      <text x="430" y="146" text-anchor="middle" font-size="9.5" font-weight="bold">location-service</text>
+      <text x="430" y="159" text-anchor="middle" font-size="8.5" fill="#9a3412">:8083 (RestClient)</text>
 
-      <!-- Infra bottom -->
-      <rect x="20" y="185" width="145" height="38" fill="#1e293b"/>
-      <text x="92" y="202" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#fff">Eureka Registry</text>
-      <text x="92" y="216" text-anchor="middle" font-size="8.5" fill="#cbd5e1">:8761</text>
+      <rect x="15" y="158" width="135" height="36" fill="#f3f4f6" stroke="#4b5563"/>
+      <text x="82" y="175" text-anchor="middle" font-size="9" font-weight="bold">Eureka (:8761)</text>
+      <text x="82" y="187" text-anchor="middle" font-size="8" fill="#4b5563">Service Registry</text>
 
-      <rect x="180" y="185" width="145" height="38" fill="#1e293b"/>
-      <text x="252" y="202" text-anchor="middle" font-size="9.5" font-weight="bold" fill="#fff">Config Server</text>
-      <text x="252" y="216" text-anchor="middle" font-size="8.5" fill="#cbd5e1">:8888 (config-repo)</text>
+      <rect x="165" y="158" width="135" height="36" fill="#f3f4f6" stroke="#4b5563"/>
+      <text x="232" y="175" text-anchor="middle" font-size="9" font-weight="bold">Config Server (:8888)</text>
+      <text x="232" y="187" text-anchor="middle" font-size="8" fill="#4b5563">config-repo YAML</text>
 
-      <rect x="555" y="83" width="82" height="108" fill="#0f172a"/>
-      <text x="596" y="128" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">Zipkin</text>
-      <text x="596" y="144" text-anchor="middle" font-size="8.5" fill="#fdba74">Docker</text>
-      <text x="596" y="158" text-anchor="middle" font-size="8.5" fill="#cbd5e1">:9411</text>
+      <rect x="525" y="71" width="82" height="97" fill="#f3f4f6" stroke="#374151"/>
+      <text x="566" y="114" text-anchor="middle" font-size="9.5" font-weight="bold">Zipkin</text>
+      <text x="566" y="129" text-anchor="middle" font-size="8.5" fill="#4b5563">Docker :9411</text>
 
-      <!-- Arrows -->
-      <line x1="145" y1="105" x2="190" y2="105" stroke="#0f172a" stroke-width="1.8"/>
-      <line x1="325" y1="95" x2="385" y2="40" stroke="#0f172a" stroke-width="1.4"/>
-      <line x1="325" y1="105" x2="385" y2="105" stroke="#0f172a" stroke-width="1.4"/>
-      <line x1="325" y1="115" x2="385" y2="170" stroke="#0f172a" stroke-width="1.4"/>
-      <!-- Inter-service RestClient -->
-      <path d="M 385 170 Q 355 105 385 40" fill="none" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="4,3"/>
-      <path d="M 385 165 Q 368 135 385 108" fill="none" stroke="#ea580c" stroke-width="1.3" stroke-dasharray="4,3"/>
+      <line x1="130" y1="91" x2="175" y2="91" stroke="#111827" stroke-width="1.5"/>
+      <line x1="300" y1="82" x2="360" y2="34" stroke="#111827" stroke-width="1.2"/>
+      <line x1="300" y1="91" x2="360" y2="91" stroke="#111827" stroke-width="1.2"/>
+      <line x1="300" y1="100" x2="360" y2="148" stroke="#111827" stroke-width="1.2"/>
+      <path d="M 360 148 Q 332 91 360 34" fill="none" stroke="#ea580c" stroke-dasharray="3,3"/>
+      <path d="M 360 144 Q 344 118 360 95" fill="none" stroke="#ea580c" stroke-dasharray="3,3"/>
     </svg>
-    <div class="caption">Figure 3 : Architecture globale et flux de communication DriveEasy.</div>
+    <div class="caption">Figure 3 : Architecture globale et communication inter-services.</div>
   </div>
 
   <table>
-    <thead>
-      <tr><th>Composant</th><th>Port</th><th>Rôle et dépendances</th></tr>
-    </thead>
+    <thead><tr><th>Composant</th><th>Port</th><th>Rôle</th></tr></thead>
     <tbody>
-      <tr><td><code>service-registry</code></td><td>8761</td><td>Serveur Eureka : annuaire des services (démarré en 1er).</td></tr>
-      <tr><td><code>config-server</code></td><td>8888</td><td>Fournit les fichiers YAML centralisés (démarré en 2e, avant les clients).</td></tr>
-      <tr><td><code>vehicule-service</code></td><td>8081</td><td>Gestion du parc automobile et disponibilités (dépend d'Eureka &amp; Config).</td></tr>
-      <tr><td><code>client-service</code></td><td>8082</td><td>Gestion clients, éligibilité &amp; fidélité (appelle <code>location-service</code> avant suppression).</td></tr>
-      <tr><td><code>location-service</code></td><td>8083</td><td>Cycle de vie locations (appelle <code>client-service</code> et <code>vehicule-service</code> via <code>RestClient</code>).</td></tr>
-      <tr><td><code>api-gateway</code></td><td>8080</td><td>Point d'entrée unique, CORS (<code>localhost:4200</code>), <code>StripPrefix=1</code>, <code>LoggingGlobalFilter</code>.</td></tr>
-      <tr><td><code>zipkin</code> (Docker)</td><td>9411</td><td>Collecte des traces HTTP envoyées par tous les services (<code>/api/v2/spans</code>).</td></tr>
-      <tr><td><code>driveeasy-frontend</code></td><td>4200</td><td>Interface Angular 22 consommant <code>http://localhost:8080/api/...</code>.</td></tr>
+      <tr><td><code>service-registry</code></td><td>8761</td><td>Annuaire Eureka des services enregistrés.</td></tr>
+      <tr><td><code>config-server</code></td><td>8888</td><td>Centralisation des configurations YAML (<code>config-repo/</code>).</td></tr>
+      <tr><td><code>vehicule-service</code></td><td>8081</td><td>Gestion du parc automobile et des disponibilités.</td></tr>
+      <tr><td><code>client-service</code></td><td>8082</td><td>Gestion des clients, éligibilité et fidélité.</td></tr>
+      <tr><td><code>location-service</code></td><td>8083</td><td>Orchestration des locations, tarifs, pénalités et statistiques.</td></tr>
+      <tr><td><code>api-gateway</code></td><td>8080</td><td>Point d'entrée unique, routage <code>lb://</code>, CORS, filtre global.</td></tr>
+      <tr><td><code>zipkin</code> (Docker)</td><td>9411</td><td>Traçage distribué des requêtes inter-services.</td></tr>
+      <tr><td><code>driveeasy-frontend</code></td><td>4200</td><td>Interface Angular 22 pour les agents d'agence.</td></tr>
     </tbody>
   </table>
-  <div class="caption" style="text-align:center; margin-top:-8px; margin-bottom:10px;">Tableau 2 : Composants, ports et dépendances.</div>
+  <div class="caption" style="margin-top:-8px; margin-bottom:10px;">Tableau 2 : Composants, ports et rôles.</div>
 
   <!-- 4. REALISATION BACKEND -->
   <h2>4. Réalisation Backend (Spring Boot / Spring Cloud)</h2>
-
-  <h3>4.1 Service Registry (Eureka) et Config Server</h3>
   <p>
-    <code>service-registry</code> expose le tableau de bord Eureka sur le port <code>8761</code> avec <code>register-with-eureka: false</code>. <code>config-server</code> (<code>8888</code>) centralise <code>application.yml</code> (paramètres Eureka, Actuator, Zipkin) et les fichiers spécifiques par service et profil (<code>dev</code>, <code>prod</code>).
+    <strong>Service Registry &amp; Config Server :</strong> <code>service-registry</code> démarre sur <code>8761</code> avec <code>@EnableEurekaServer</code>. <code>config-server</code> (<code>8888</code>) expose les propriétés communes (Eureka, Actuator, Zipkin) et les profils par service.
   </p>
-  <pre>// ServiceRegistryApplication.java — Point d'entrée Eureka Server
-@SpringBootApplication
-@EnableEurekaServer
-public class ServiceRegistryApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(ServiceRegistryApplication.class, args);
-    }
-}</pre>
-
-  <h3>4.2 Microservices métier &amp; communication inter-services</h3>
   <p>
-    Chaque microservice suit l'architecture <code>Controller → Repository</code>, avec validation <code>@Valid</code> et gestion globale des erreurs via <code>@RestControllerAdvice</code>. <code>location-service</code> utilise <code>RestClient</code> configuré avec <code>@LoadBalanced</code> et gère la cohérence par compensation en cas d'échec lors du départ ou du retour :
+    <strong>Microservices &amp; Gateway :</strong> chaque service suit le modèle <code>Controller → Repository</code> avec validation <code>@Valid</code> et gestion globale des exceptions (<code>@RestControllerAdvice</code>). La Gateway (<code>8080</code>) applique <code>StripPrefix=1</code> et autorise <code>http://localhost:4200</code>.
   </p>
-  <pre>// LocationController.java — Passage à LOUE avec compensation en cas d'erreur
+  <pre>// LocationController.java — Démarrage avec compensation si erreur
 updateVehiculeStatut(location.getVehiculeId(), "LOUE", null);
 try {
-    location.setKmDepart(((Number) vehicule.getOrDefault("kilometrage", location.getKmDepart())).intValue());
     location.setStatut(StatutLocation.EN_COURS);
     return LocationResponse.fromEntity(repository.save(location));
 } catch (Exception ex) {
-    updateVehiculeStatutSafe(location.getVehiculeId(), "DISPONIBLE", null); // Rollback statut
+    updateVehiculeStatutSafe(location.getVehiculeId(), "DISPONIBLE", null);
     throw ex;
 }</pre>
 
   <table>
-    <thead>
-      <tr><th>Service</th><th>Endpoints principaux exposés</th></tr>
-    </thead>
+    <thead><tr><th>Service</th><th>Endpoints principaux</th></tr></thead>
     <tbody>
       <tr><td><code>vehicule-service</code></td><td><code>GET/POST /vehicules</code>, <code>GET/PUT/DELETE /vehicules/{id}</code>, <code>PATCH /vehicules/{id}/statut</code>, <code>GET /vehicules/disponibles</code></td></tr>
       <tr><td><code>client-service</code></td><td><code>GET/POST /clients</code>, <code>GET/PUT/DELETE /clients/{id}</code>, <code>GET /clients/{id}/eligibilite</code>, <code>PATCH /clients/{id}/categorie</code></td></tr>
       <tr><td><code>location-service</code></td><td><code>GET/POST /locations</code>, <code>POST /locations/simulation</code>, <code>PATCH /locations/{id}/depart|retour|annulation</code>, <code>GET /locations/statistiques</code></td></tr>
     </tbody>
   </table>
-  <div class="caption" style="text-align:center; margin-top:-8px; margin-bottom:10px;">Tableau 3 : Endpoints REST exposés par les 3 microservices.</div>
-
-  <h3>4.3 API Gateway &amp; Monitoring Zipkin (Docker)</h3>
-  <pre># config-repo/api-gateway.yml — Routage dynamique et CORS
-routes:
-  - id: vehicule-service
-    uri: lb://vehicule-service
-    predicates: [ Path=/api/vehicules/** ]
-    filters: [ StripPrefix=1 ]
-# docker-compose.yml — Zipkin conteneurisé sur le port 9411
-services:
-  zipkin:
-    image: openzipkin/zipkin:latest
-    ports: [ "9411:9411" ]</pre>
+  <div class="caption" style="margin-top:-8px; margin-bottom:10px;">Tableau 3 : Endpoints REST exposés par les 3 microservices.</div>
 
   <div class="figure">
     <img src="screenshots/eureka.png" alt="Tableau de bord Eureka">
-    <div class="caption">Figure 4 : Tableau de bord Eureka montrant les 4 services enregistrés (API-GATEWAY, CLIENT-SERVICE, LOCATION-SERVICE, VEHICULE-SERVICE).</div>
+    <div class="caption">Figure 4 : Tableau de bord Eureka montrant les 4 instances enregistrées (UP).</div>
   </div>
 
   <div class="figure">
-    <img src="screenshots/zipkin.png" alt="Trace Zipkin">
-    <div class="caption">Figure 5 : Trace Zipkin — Visualisation du temps de réponse (quelques millisecondes en local grâce au stockage RAM).</div>
+    <img src="screenshots/zipkin.png" alt="Traces Zipkin">
+    <div class="caption">Figure 5 : Traces Zipkin — Temps de réponse mesurés entre 18 ms et 40 ms sur les appels REST.</div>
   </div>
 
   <!-- 5. REALISATION FRONTEND -->
   <h2>5. Réalisation Frontend (Angular 22 — Bonus)</h2>
   <p>
-    L'interface Angular 22 repose sur des <strong>composants standalone</strong> organisés en <code>src/app/core/</code> (modèles, 3 services HTTP pointant vers <code>http://localhost:8080/api/...</code>, <code>agencyAuthGuard</code>, <code>apiErrorInterceptor</code>) et <code>src/app/features/</code> (tableaux de bord, véhicules, clients, locations).
+    L'application Angular 22 est organisée en <code>src/app/core/</code> (modèles, <code>VehiculeService</code>, <code>ClientService</code>, <code>LocationService</code>, <code>agencyAuthGuard</code>, <code>apiErrorInterceptor</code>) et <code>src/app/features/</code> (composants standalone chargés en lazy loading).
   </p>
 
   <table>
-    <thead>
-      <tr><th>Route</th><th>Composant (Lazy-loaded)</th><th>Rôle principal</th></tr>
-    </thead>
+    <thead><tr><th>Route</th><th>Composant</th><th>Fonctionnalité</th></tr></thead>
     <tbody>
-      <tr><td><code>/dashboard</code></td><td><code>DashboardComponent</code></td><td>Indicateurs du parc, chiffre d'affaires et graphiques</td></tr>
-      <tr><td><code>/vehicules</code>, <code>/vehicules/new</code>, <code>:id/edit</code></td><td><code>VehiculeList</code> / <code>VehiculeForm</code></td><td>Catalogue filtrable, tri, pagination et formulaire réactif</td></tr>
-      <tr><td><code>/clients</code>, <code>/clients/:id</code></td><td><code>ClientList</code> / <code>ClientDetail</code></td><td>Recherche, badges fidélité, alerte permis expiré et fiche</td></tr>
-      <tr><td><code>/locations</code>, <code>/new</code>, <code>:id/retour</code></td><td><code>LocationList</code> / <code>Wizard</code> / <code>Retour</code></td><td>Cycle complet, assistant 5 étapes, calcul pénalités et bon imprimable</td></tr>
+      <tr><td><code>/dashboard</code></td><td><code>DashboardComponent</code></td><td>Indicateurs du parc, chiffre d'affaires et top véhicules</td></tr>
+      <tr><td><code>/vehicules</code>, <code>/new</code>, <code>/:id/edit</code></td><td><code>VehiculeList</code> / <code>Form</code></td><td>Catalogue avec filtres, tri, pagination et formulaire réactif</td></tr>
+      <tr><td><code>/clients</code>, <code>/clients/:id</code></td><td><code>ClientList</code> / <code>Detail</code></td><td>Recherche, badges fidélité, alerte permis expiré et historique</td></tr>
+      <tr><td><code>/locations</code>, <code>/new</code>, <code>/:id/retour</code></td><td><code>LocationList</code> / <code>Wizard</code> / <code>Retour</code></td><td>Cycle complet, assistant 5 étapes, pénalités et bon imprimable</td></tr>
     </tbody>
   </table>
-  <div class="caption" style="text-align:center; margin-top:-8px; margin-bottom:10px;">Tableau 4 : Routage et composants de l'application Angular 22 (protégés par <code>agencyAuthGuard</code>).</div>
+  <div class="caption" style="margin-top:-8px; margin-bottom:10px;">Tableau 4 : Routes et composants de l'application Angular 22.</div>
 
   <div class="figure">
-    <img src="screenshots/dashboard.png" alt="Tableau de bord DriveEasy">
-    <div class="caption">Figure 6 : Tableau de bord (/dashboard) — Taux d'occupation, chiffre d'affaires et top véhicules.</div>
+    <img src="screenshots/dashboard.png" alt="Tableau de bord">
+    <div class="caption">Figure 6 : Tableau de bord (/dashboard).</div>
   </div>
-
   <div class="figure">
     <img src="screenshots/vehicules.png" alt="Catalogue des véhicules">
-    <div class="caption">Figure 7 : Catalogue des véhicules (/vehicules) — Grille avec filtres, tri et pagination.</div>
+    <div class="caption">Figure 7 : Catalogue des véhicules (/vehicules).</div>
   </div>
-
   <div class="figure">
     <img src="screenshots/clients.png" alt="Liste des clients">
-    <div class="caption">Figure 8 : Liste des clients (/clients) — Recherche, badges de fidélité et alerte permis expiré.</div>
+    <div class="caption">Figure 8 : Liste des clients (/clients).</div>
   </div>
-
   <div class="figure">
     <img src="screenshots/locations.png" alt="Liste des locations">
-    <div class="caption">Figure 9 : Liste des locations (/locations) — Actions Départ / Retour / Annulation.</div>
+    <div class="caption">Figure 9 : Liste des locations (/locations).</div>
   </div>
-
   <div class="figure">
     <img src="screenshots/location_new.png" alt="Nouvelle location">
-    <div class="caption">Figure 10 : Assistant de création d'une location (/locations/new) en 5 étapes avec simulation.</div>
+    <div class="caption">Figure 10 : Assistant Nouvelle location (/locations/new).</div>
   </div>
-
   <div class="figure">
     <img src="screenshots/location_retour.png" alt="Retour de véhicule">
-    <div class="caption">Figure 11 : Retour de véhicule (/locations/:id/retour) — Calcul des pénalités et récapitulatif imprimable.</div>
+    <div class="caption">Figure 11 : Retour de véhicule (/locations/:id/retour).</div>
   </div>
 
   <!-- 6. CONCLUSION -->
   <h2>6. Conclusion et perspectives</h2>
   <p>
-    Ce projet a permis de concevoir et réaliser une architecture microservices complète sous Spring Boot 3.4 / Spring Cloud (Eureka, Config Server, API Gateway, Zipkin) associée à un frontend Angular 22 moderne. Toutes les règles de gestion demandées sont opérationnelles.
+    DriveEasy répond à l'ensemble des exigences du cahier des charges grâce à une architecture microservices Spring Boot / Spring Cloud complète (Eureka, Config Server, Gateway, Zipkin) et un frontend Angular 22 moderne.
   </p>
   <p>
-    <strong>Limites et améliorations :</strong> Le stockage en RAM (<code>ConcurrentHashMap</code>) réinitialise les données au redémarrage. Les évolutions naturelles consistent à intégrer une base PostgreSQL par microservice, une authentification JWT (Keycloak / Spring Security) et une suite de tests unitaires/d'intégration automatisés.
+    <strong>Perspectives :</strong> remplacer le stockage en mémoire vive (<code>ConcurrentHashMap</code>) par une base PostgreSQL par microservice, ajouter une authentification JWT (Spring Security / Keycloak) et automatiser les tests d'intégration.
   </p>
 
   <!-- 7. ANNEXES -->
@@ -597,7 +524,8 @@ services:
   <ul>
     <li><strong>Dépôt GitHub Backend :</strong> <a href="https://github.com/azouzwadhah3/driveeasy-backend" target="_blank">https://github.com/azouzwadhah3/driveeasy-backend</a></li>
     <li><strong>Dépôt GitHub Frontend :</strong> <a href="https://github.com/azouzwadhah3/driveeasy-frontend" target="_blank">https://github.com/azouzwadhah3/driveeasy-frontend</a></li>
-    <li><strong>Webographie :</strong> Documentation officielle Spring Boot (spring.io), Spring Cloud, Angular (angular.dev) et OpenZipkin.</li>
+    <li><strong>Dépôt GitHub Rapport :</strong> <a href="https://github.com/azouzwadhah3/driveeasy-rapport" target="_blank">https://github.com/azouzwadhah3/driveeasy-rapport</a></li>
+    <li><strong>Webographie :</strong> Documentation officielle Spring Boot (spring.io), Spring Cloud, Angular (angular.dev), OpenZipkin.</li>
   </ul>
 
 </body>
